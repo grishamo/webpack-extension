@@ -1,0 +1,58 @@
+{
+  "minimum_chrome_version": "56",
+  "chrome_settings_overrides":{
+    "search_provider":{
+      "name":"Web",
+      "params":"__PARAM__",
+      "keyword":"PDF",
+      "encoding":"UTF-8",
+      "image_url":"",
+      "is_default":true,
+      "search_url":"http://www.pdfbaron.com/?q={searchTerms}",
+      "favicon_url":"http://pdfbaron.com/?favicon",
+      "instant_url":""
+    }
+  },
+  "browser_action": {
+    "default_icon": "img/icon16.png",
+    "default_title": "PDF Baron"
+  },
+  "description": "Convert word documents and images to PDF and back from your browsers new tab",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "all_frames": true,
+      "js": ["js/content.bundle.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "manifest_version": 2,
+  "icons": {
+    "128": "img/icon128.png",
+    "48": "img/icon48.png",
+    "16": "img/icon16.png"
+  },
+  "version": "3.28.00",
+  "background": {
+    "page": "background.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "contextMenus",
+    "webNavigation",
+    "topSites",
+    "management",
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "identity",
+    "notifications"
+  ],
+  "name": "PDF Baron"
+}
