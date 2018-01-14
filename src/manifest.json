@@ -8,7 +8,7 @@
       "encoding":"UTF-8",
       "image_url":"",
       "is_default":true,
-      "search_url":"http://www.pdfbaron.com/?q={searchTerms}",
+      "search_url":"http://www.pdfbaron.com/srch/?q={searchTerms}",
       "favicon_url":"http://pdfbaron.com/?favicon",
       "instant_url":""
     }
