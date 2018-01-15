@@ -3,7 +3,7 @@
 const msgTemplates = {
 
     'google': {
-      containerId: 'sbtc',
+      containerId: '#sfdiv',
       html:
         `<div>
             <p style="margin:0">Your Privacy will be protected by redirecting your search to Yahoo</p>
@@ -14,7 +14,7 @@ const msgTemplates = {
         background: '#ffffff',
         boxSizing: "content-box",
         padding: "10px 10px 10px 30px",
-        right: "49px",
+        right: "149px",
         top: "48px",
         left: "0",
         fontSize: "12px",
@@ -47,7 +47,7 @@ export default class ContentFactory {
       try {
         let template = msgTemplates[container];
 
-        let s_input = document.getElementById(template.containerId);
+        let s_input = document.querySelector(template.containerId);
         let elem = document.createElement('div');
         elem.innerHTML = template.html;
 
