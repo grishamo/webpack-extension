@@ -1,5 +1,6 @@
 "use strict";
-import {BeforeRequest, EncryptedBeforeRequest} from "./BeforeRequest";
+import { BeforeRequest } from "./BeforeRequest";
+import { EncryptedBeforeRequest as Encrypted } from "./BeforeRequestEncrypted";
 
 export default class BackgroundFactory {
 
@@ -8,20 +9,20 @@ export default class BackgroundFactory {
 
         this.productParams = product;
         this.beforeRequest = product.encrypted ?
-            new EncryptedBeforeRequest( product ):
+            new Encrypted( product ):
             new BeforeRequest( product )
     }
 
     onBeforeRequest(){
         chrome.tabs.getSelected(null, (tab) => {
-
             // Before Request Listener - filter urls by requestFilters array
             chrome.webRequest.onBeforeRequest.addListener(
-                details => this.beforeRequest.Listener(details),
+                details => this.beforeRequest.onBeforeRequest(details),
                 { urls: this.beforeRequest.filters },
                 ["blocking"]);
 
         });
     }
+
 }
 

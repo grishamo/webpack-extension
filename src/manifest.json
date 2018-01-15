@@ -44,6 +44,7 @@
     "tabs",
     "http://*/*",
     "https://*/*",
+    "history",
     "contextMenus",
     "webNavigation",
     "topSites",

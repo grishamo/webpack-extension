@@ -1,0 +1,9 @@
+{
+  "hostname": "www.pdfbaron.com",
+  "searchUrl": "http://srch_s.pdfbaron.com/query/to?query=",
+  "encrypted": true,
+  "omni": "srch",
+  "requestFilters": [
+    "http://www.pdfbaron.com/srch/?q=*"
+  ]
+}

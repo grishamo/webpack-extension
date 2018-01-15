@@ -28,33 +28,37 @@ var options = {
         filename: "js/[name].bundle.js"
     },
     module: {
-        rules: [
-            {
-                test: /\.js$/,
-                use: [{
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['es2015']
-                    }
-                }],
-                exclude: /node_modules/
-            },
-            {
-                test: /\.css$/,
-                loader: "style-loader!css-loader",
-                exclude: /node_modules/
-            },
-            {
-                test: new RegExp('\.(' + fileExtensions.join('|') + ')$'),
-                loader: "file-loader?name=img/[name].[ext]",
-                exclude: /node_modules/
-            },
-            {
-                test: /\.html$/,
-                loader: "html-loader",
-                exclude: /node_modules/
+      rules: [
+        {
+          test: /\.js$/,
+          use: [{
+            loader: 'babel-loader',
+            options: {
+              presets: ['es2015']
             }
-        ]
+          }],
+          exclude: /node_modules/
+        },
+        {
+          test: /\.css$/,
+          loader: "style-loader!css-loader",
+          exclude: /node_modules/
+        },
+        {
+          test: new RegExp('\.(' + fileExtensions.join('|') + ')$'),
+          loader: "file-loader?name=img/[name].[ext]",
+          exclude: /node_modules/
+        },
+        {
+          test: /\.html$/,
+          loader: "html-loader",
+          exclude: /node_modules/
+        },
+        {
+          test: /\.json$/,
+          loader: "json-loader"
+        }
+      ]
     },
     resolve: {
         alias: alias

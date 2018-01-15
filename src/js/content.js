@@ -1,14 +1,8 @@
 
-import ContentFactory from './contentFactory';
+import ContentFactory from './content/ContentFactory';
+import productConfig from './productConfig.json';
 
+let contentFactory = new ContentFactory( productConfig );
 
-let factory = new ContentFactory( window.location );
-
-if(document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-
-    factory.exec();
-
-  }, false);
-}
+contentFactory.onDOMContentLoaded();
 
